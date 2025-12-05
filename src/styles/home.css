@@ -1,27 +1,50 @@
 .welcome {
     text-align: center;
-    font-size: 1.5em;
-    margin: 2rem 15% 5rem 15%;
+    font-size: 1.25em; /* Slightly smaller for modern look */
+    margin: 3rem auto; /* More vertical margin, auto for horizontal centering */
+    max-width: 800px; /* Limit width for readability */
+    color: var(--light-text-color);
+    line-height: 1.8;
 }
 
 .recents {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
-    margin: 0 8% 0 8%;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 2rem; /* Spacing between sections */
+    margin: 0 5%; /* Reduced horizontal margin for more space */
+    justify-content: center; /* Center align items when wrapped */
 }
 
 .recents h3 {
     font-size: 1.75rem;
     text-align: center;
-    margin-block-end: 0;
+    margin-bottom: 1.5rem; /* Consistent spacing */
+    color: var(--primary-color);
+}
+
+.recentInstruments,
+.recentClasses {
+    flex: 1; /* Allow sections to grow and shrink */
+    min-width: 300px; /* Ensure minimum width for content */
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .recentInstruments {
-    flex: 3;
-    margin-right: 10rem;
+    margin-right: 0; /* Remove fixed margin, use gap */
 }
 
-.recentClasses {
-    flex: 2;
+@media (max-width: 768px) {
+    .recents {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .recentInstruments,
+    .recentClasses {
+        width: 90%; /* Full width on small screens */
+    }
 }

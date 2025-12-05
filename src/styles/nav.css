@@ -1,18 +1,38 @@
 .navLinks {
     display: flex;
     list-style-type: none;
-    justify-content: space-evenly;
-    background-color: khaki;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    justify-content: center; /* Center align navigation items */
+    background-color: var(--primary-color);
+    margin: 0;
+    padding: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 .navLink {
-    padding: 1rem;
-    font-size: 1.25em;
+    padding: 1rem 1.5rem; /* More horizontal padding */
+    font-size: 1.1em; /* Slightly smaller font for a sleeker look */
+    color: white; /* White text for contrast */
+    text-transform: uppercase; /* Uppercase text */
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .navLink:hover {
     cursor: pointer;
-    background-color: darkgoldenrod
+    background-color: #303f9f; /* Darker primary color on hover */
+    color: white;
+}
+
+/* Responsive adjustments for navigation */
+@media (max-width: 768px) {
+    .navLinks {
+        flex-wrap: wrap; /* Allow navigation items to wrap */
+        justify-content: center;
+        padding: 0.5rem 0;
+    }
+
+    .navLink {
+        padding: 0.8rem 1rem;
+        font-size: 1em;
+    }
 }
