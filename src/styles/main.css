@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap');
 @import url("./serfs.css");
 @import url("./switch.css");
 @import url("./nav.css");
@@ -8,44 +8,112 @@
 @import url("./options.css");
 @import url("./instrumentDetail.css");
 
+:root {
+    --primary-color: #3f51b5; /* A subtle blue */
+    --secondary-color: #f5f5f5; /* Light gray for backgrounds */
+    --text-color: #333; /* Dark gray for text */
+    --light-text-color: #666; /* Lighter gray for secondary text */
+    --border-color: #ddd; /* Light border */
+    --accent-color: #ff9800; /* Orange accent */
+    --error-color: #f44336; /* Red for errors */
+}
+
 /*Typography
 --------------------------------------------------------------*/
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
 body,
 button,
 input,
 select,
 textarea {
-	color: #404040;
-	font-family: 'Crimson Pro', serif;
-	font-size: 1rem;
-	line-height: 1.5;
+    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6; /* Slightly increased line height */
+    background-color: var(--secondary-color);
 }
 
-h1,h2,h3,h4,h5,h6 {
-  letter-spacing: 2px;
+button,
+input[type="submit"],
+input[type="button"] {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
+    background-color: #303f9f; /* Slightly darker primary */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+    border: 1px solid var(--border-color);
+    padding: 0.6rem 0.8rem;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    letter-spacing: 0.05em; /* Slightly reduced letter-spacing for modern feel */
+    color: var(--text-color);
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
 }
 
 main h2 {
-    font-size: 3em;
+    font-size: 2.5em; /* Slightly smaller for balance */
+    color: var(--primary-color);
 }
 
 hr {
-	border: 1px solid rgb(138, 121, 121);
-	margin-left: 1rem;
-	margin-right: 1rem;
+	border: 0;
+	height: 1px;
+	background: var(--border-color);
+	margin: 2rem 1rem;
 }
 
 #header {
-    line-height: 0.9;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+    line-height: normal; /* Reset line height */
 }
 
 .title--name {
     cursor: pointer;
 	text-align: center;
-	font-size: 3.75em;
+	font-size: 3em; /* Slightly smaller */
 	margin-block-start: 0;
 	margin-block-end: 0;
 	padding: 0;
+    color: var(--primary-color);
 }
 
 .title--icon {
@@ -54,26 +122,50 @@ hr {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    height: 6rem;
+    height: 4rem; /* Slightly smaller icon */
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1));
 }
 
 .loginForm, .loginForm input {
     display: flex;
     flex-direction: column;
-    font-size: 1.5rem;
-    margin: 0 15%;
+    font-size: 1.2rem; /* Slightly smaller font for login form */
+    margin: 2rem auto; /* Centered with more vertical spacing */
     align-items: center;
+    max-width: 400px; /* Max width for readability */
+    padding: 2rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.loginForm input {
+    margin-bottom: 1rem;
+    width: 100%; /* Full width within the form */
 }
 
 .register {
-    padding-top: 3rem;
+    padding-top: 1rem; /* Less padding */
     text-align: center;
+    color: var(--light-text-color);
 }
 
-#loginButton {
-    font-size: 1.25rem;
-    width: 10rem;
+.register a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.register a:hover {
+    text-decoration: underline;
+}
+
+#loginButton, #register {
+    font-size: 1rem;
+    width: auto; /* Allow button to size naturally */
+    min-width: 10rem;
     margin: 1rem 0 0 0;
+    align-self: stretch; /* Stretch button to fill form width */
 }
 
 @keyframes jiggle {
@@ -93,4 +185,40 @@ hr {
         transform: rotate(0deg) scale(1);
         opacity: 1;
     }
+}
+
+/* General Link Styling */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #303f9f; /* Darker blue on hover */
+    text-decoration: underline;
+}
+
+/* Card-like containers for content sections */
+.card-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+/* Centered content */
+.header--centered {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.mission {
+    max-width: 800px;
+    margin: 2rem auto;
+    text-align: center;
+    color: var(--light-text-color);
+    font-size: 1.1rem;
+    line-height: 1.8;
 }

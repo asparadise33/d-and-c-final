@@ -1,4 +1,5 @@
 import { login } from "../data/UserStateManager.js"
+import { settings } from "../data/Settings.js"
 
 const container = document.querySelector("#content")
 const formState = {

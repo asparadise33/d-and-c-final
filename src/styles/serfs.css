@@ -76,3 +76,43 @@
     font-size: 1.3rem;
     margin: 2rem 10%;
 }
+
+@media (max-width: 780px) {
+    .card {
+        flex-basis: calc(50% - 1rem);
+        box-sizing: border-box;
+    }
+    .serf__email {
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 781px) and (max-width: 900px) {
+    .card {
+        flex-basis: calc(50% - 1rem);
+        box-sizing: border-box;
+    }
+    .serf__email {
+        font-size: 1.1rem;
+    }
+}
+
+@media (min-width: 901px) and (max-width: 1380px) {
+    .card {
+        flex-basis: calc(33.33% - 1rem);
+        box-sizing: border-box;
+    }
+    .serf__email {
+        font-size: 1.25rem;
+    }
+}
+
+@media (min-width: 1381px) {
+    .card {
+        flex-basis: calc(25% - 1rem);
+        box-sizing: border-box;
+    }
+    .serf__email {
+        font-size: 1.25rem;
+    }
+}
